@@ -4,531 +4,660 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>hey, tú! 💗</title>
+<title>Buenos días, Especial ✨</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Fredoka:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --pink: #ff78a7;
-  --pink-light: #ffe2ed;
-  --purple: #b9a1ff;
-  --blue: #a6d9ff;
-  --yellow: #ffe28a;
-  --ink: #443849;
-  --paper: #fffafd;
+    --pink: #f47da7;
+    --pink-dark: #dc6795;
+    --pink-light: #ffe8f0;
+    --purple: #b9a6ef;
+    --blue: #c5e5f8;
+    --yellow: #ffedb0;
+    --background: #fff7fa;
+    --text: #55485b;
+    --muted: #96879a;
+    --white: #ffffff;
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  min-height: 100vh;
-  background: #fff6fa;
-  color: var(--ink);
-  font-family: 'Nunito', sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 22px 15px;
-  overflow-x: hidden;
-  position: relative;
+    font-family: 'Nunito', sans-serif;
+    background: var(--background);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 16px;
+    overflow-x: hidden;
+    position: relative;
+    color: var(--text);
 }
+
+/* FONDO */
 
 body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: radial-gradient(#f7bfd4 1.2px, transparent 1.2px);
-  background-size: 25px 25px;
-  opacity: .5;
-  pointer-events: none;
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(#f3c8d9 1px, transparent 1px);
+    background-size: 27px 27px;
+    opacity: .55;
+    pointer-events: none;
 }
 
-.sticker {
-  position: fixed;
-  z-index: 0;
-  pointer-events: none;
-  font-size: 34px;
-  animation: float 4s ease-in-out infinite;
+.bg-decoration {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+    opacity: .65;
+    font-size: 27px;
+    animation: float 4s ease-in-out infinite;
 }
 
-.s1 { top: 9%; left: 8%; }
-.s2 { top: 17%; right: 8%; animation-delay: 1s; }
-.s3 { bottom: 10%; left: 9%; animation-delay: 2s; }
-.s4 { bottom: 15%; right: 9%; animation-delay: .5s; }
+.deco-1 { top: 9%; left: 8%; }
+.deco-2 { top: 17%; right: 9%; animation-delay: 1s; }
+.deco-3 { bottom: 12%; left: 8%; animation-delay: 2s; }
+.deco-4 { bottom: 17%; right: 8%; animation-delay: .5s; }
+
+/* TARJETA */
 
 .card {
-  width: 100%;
-  max-width: 420px;
-  background: var(--paper);
-  border: 2px solid #f5dce8;
-  border-radius: 26px;
-  padding: 30px 25px;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-  box-shadow: 7px 8px 0 #f4d6e5;
-  animation: appear .6s ease;
+    width: 100%;
+    max-width: 420px;
+    background: rgba(255,255,255,.96);
+    border: 1px solid #f4dce7;
+    border-radius: 25px;
+    padding: 32px 27px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    box-shadow: 6px 7px 0 #f5dce9,
+                0 15px 40px rgba(181,124,151,.10);
+    animation: appear .7s ease;
 }
 
+/* ETIQUETA SUPERIOR */
+
 .top-tag {
-  display: inline-block;
-  background: #ffe4ef;
-  color: #d65f91;
-  border-radius: 30px;
-  padding: 7px 14px;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 1px;
-  margin-bottom: 22px;
-  transform: rotate(-2deg);
+    display: inline-block;
+    padding: 7px 15px;
+    background: #ffe8f0;
+    border-radius: 30px;
+    color: #d86f99;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    margin-bottom: 22px;
+}
+
+/* TITULOS */
+
+.emoji-header {
+    font-size: 48px;
+    margin-bottom: 13px;
+    display: inline-block;
+    animation: float 4s ease-in-out infinite;
 }
 
 h1 {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 37px;
-  line-height: 1.15;
-  font-weight: 600;
-  color: #ee78a4;
-  margin-bottom: 12px;
+    font-family: 'Fredoka', sans-serif;
+    color: #ed79a3;
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 12px;
 }
 
 .subtitle {
-  font-size: 15px;
-  line-height: 1.8;
-  color: #887889;
-  margin-bottom: 24px;
+    font-family: 'Nunito', sans-serif;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 24px;
 }
 
-.big-emoji {
-  font-size: 60px;
-  display: block;
-  margin-bottom: 13px;
-  animation: float 3s ease-in-out infinite;
+/* PREGUNTA */
+
+.question-box {
+    background: #f2edff;
+    border: 1.5px dashed #c7b6f2;
+    border-radius: 17px;
+    padding: 19px 15px;
+    margin-bottom: 18px;
+    color: #655577;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 1.7;
 }
 
-.question {
-  background: #f2edff;
-  border: 1.5px dashed #c4b2ff;
-  border-radius: 17px;
-  padding: 20px 14px;
-  font-size: 15px;
-  font-weight: 800;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
+/* BOTONES INTRO */
 
 .playground {
-  height: 100px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: relative;
+    height: 105px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button {
-  font-family: 'Nunito', sans-serif;
-  border: none;
-  cursor: pointer;
-  font-weight: 900;
-  font-size: 14px;
+    border: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
 }
 
 .btn-yes {
-  background: var(--pink);
-  color: white;
-  border-radius: 15px;
-  padding: 15px 22px;
-  box-shadow: 0 5px 0 #e45e91;
-  position: absolute;
-  left: 5%;
-  transition: transform .2s;
+    background: var(--pink);
+    color: white;
+    padding: 15px 23px;
+    border-radius: 15px;
+    box-shadow: 0 5px 0 #d96591;
+    position: absolute;
+    left: 5%;
+    transition: transform .25s, background .25s;
 }
 
-.btn-yes:active {
-  transform: scale(.95);
+.btn-yes:hover {
+    background: var(--pink-dark);
 }
 
 .btn-no {
-  background: #eee9f3;
-  color: #85758e;
-  border-radius: 15px;
-  padding: 15px 22px;
-  position: absolute;
-  right: 5%;
-  transition: left .2s, top .2s;
+    background: #f0edf3;
+    color: #817487;
+    padding: 15px 23px;
+    border-radius: 15px;
+    position: absolute;
+    right: 5%;
+    transition: left .25s ease, top .25s ease;
+    z-index: 3;
 }
 
-.hint {
-  min-height: 25px;
-  font-size: 13px;
-  font-weight: 800;
-  color: #e878a3;
-  margin-top: 6px;
+.hint-text {
+    font-size: 13px;
+    color: #d879a0;
+    min-height: 23px;
+    margin-top: 3px;
+    font-weight: 800;
 }
+
+/* PANTALLAS */
 
 .hidden {
-  display: none !important;
+    display: none !important;
 }
 
-.fade {
-  animation: appear .55s ease;
+.fade-in {
+    animation: appear .65s ease forwards;
 }
+
+/* CONTADOR */
 
 .counter {
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 2px;
-  color: #c28cdb;
-  margin-bottom: 15px;
+    font-size: 11px;
+    color: #ad91d2;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
 }
 
+/* FOTO RECTANGULAR */
+
 .photo-container {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  border-radius: 16px;
-  overflow: hidden;
-  background: #fce5ef;
-  border: 3px solid white;
-  box-shadow: 0 4px 0 #efd8e8;
-  margin-bottom: 23px;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    margin: 0 auto 22px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fce8f0;
+    border: 3px solid white;
+    box-shadow: 0 4px 0 #eed9e7;
 }
 
 .photo-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
-.section-title {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 28px;
-  color: #ed78a2;
-  margin-bottom: 7px;
+/* TEXTO DE CUMPLIDOS */
+
+.compliment-title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 27px;
+    font-weight: 600;
+    color: #ed79a3;
+    margin-bottom: 7px;
 }
 
-.section-subtitle {
-  font-size: 13px;
-  color: #a08ca0;
-  margin-bottom: 19px;
+.compliment-subtitle {
+    font-size: 13px;
+    color: #a08da3;
+    margin-bottom: 19px;
+    line-height: 1.6;
 }
+
+/* CAJA DEL MENSAJE */
 
 .message-box {
-  background: #fff0f5;
-  border: 1.5px solid #f9dbe7;
-  border-radius: 17px;
-  min-height: 145px;
-  padding: 25px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-  line-height: 1.9;
-  font-weight: 800;
-  color: #705568;
-  transition: opacity .25s, transform .25s;
+    background: #fff1f6;
+    border: 1px solid #f5dce7;
+    border-radius: 17px;
+    padding: 24px 19px;
+    min-height: 145px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #685469;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.85;
+    transition: opacity .25s, transform .25s;
 }
 
+/* PROGRESO */
+
 .progress {
-  height: 5px;
-  width: 100%;
-  background: #f7e9ef;
-  border-radius: 10px;
-  margin: 20px 0;
-  overflow: hidden;
+    height: 5px;
+    background: #f4e7ef;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 20px 0;
 }
 
 .progress-fill {
-  height: 100%;
-  width: 12.5%;
-  background: linear-gradient(90deg, #ff78a7, #b9a1ff);
-  border-radius: 10px;
-  transition: width .4s ease;
+    width: 12.5%;
+    height: 100%;
+    background: linear-gradient(90deg, #f47da7, #b9a6ef);
+    border-radius: 20px;
+    transition: width .4s ease;
 }
 
+/* BOTON SIGUIENTE */
+
 .btn-next {
-  width: 100%;
-  background: var(--pink);
-  color: white;
-  border-radius: 15px;
-  padding: 16px;
-  box-shadow: 0 5px 0 #e45e91;
-  transition: .2s;
+    width: 100%;
+    background: var(--pink);
+    color: white;
+    padding: 16px;
+    border-radius: 15px;
+    box-shadow: 0 5px 0 #d96591;
+    transition: transform .2s, background .2s;
+}
+
+.btn-next:hover {
+    background: var(--pink-dark);
 }
 
 .btn-next:active {
-  transform: translateY(3px);
-  box-shadow: none;
+    transform: translateY(3px);
+    box-shadow: none;
 }
 
 .footer {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 17px;
-  color: #b69bc9;
-  margin-top: 24px;
+    font-family: 'Caveat', cursive;
+    color: #b69bc9;
+    font-size: 19px;
+    margin-top: 22px;
 }
+
+/* PARTICULAS */
 
 .particle {
-  position: fixed;
-  top: -30px;
-  z-index: 10;
-  pointer-events: none;
-  animation: fall linear forwards;
+    position: fixed;
+    top: -30px;
+    user-select: none;
+    pointer-events: none;
+    z-index: 100;
+    animation: fall linear forwards;
 }
 
+/* ANIMACIONES */
+
 @keyframes float {
-  0%,100% { transform: translateY(0) rotate(-5deg); }
-  50% { transform: translateY(-10px) rotate(6deg); }
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(6deg);
+    }
 }
 
 @keyframes appear {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fall {
-  to {
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0;
-  }
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
 }
 
-@media(max-width:380px) {
-  .card { padding: 25px 18px; }
-  h1 { font-size: 32px; }
-  .big-emoji { font-size: 48px; }
-  .sticker { font-size: 25px; }
+/* CELULARES */
+
+@media (max-width: 400px) {
+    .card {
+        padding: 27px 19px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .emoji-header {
+        font-size: 42px;
+    }
+
+    .message-box {
+        padding: 21px 16px;
+        font-size: 14px;
+    }
+
+    .bg-decoration {
+        font-size: 21px;
+    }
 }
 
-@media(prefers-reduced-motion:reduce) {
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
-    transition-duration: .01ms !important;
-  }
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div class="sticker s1">⭐</div>
-<div class="sticker s2">💗</div>
-<div class="sticker s3">🦋</div>
-<div class="sticker s4">✨</div>
+<!-- DECORACIONES DEL FONDO -->
+<div class="bg-decoration deco-1">✦</div>
+<div class="bg-decoration deco-2">♡</div>
+<div class="bg-decoration deco-3">✧</div>
+<div class="bg-decoration deco-4">★</div>
 
-<main class="card">
+<div class="card fade-in">
 
-  <!-- PANTALLA INICIAL -->
+    <!-- PANTALLA 1: BUENOS DÍAS -->
 
-  <section id="intro">
-    <div class="top-tag">✦ UN PEQUEÑO DETALLE ✦</div>
+    <div id="screen-intro">
 
-    <span class="big-emoji">☀️</span>
+        <div class="top-tag">A LITTLE SURPRISE FOR YOU</div>
 
-    <h1>Hey, tú!!</h1>
+        <div class="emoji-header">☀️</div>
 
-    <p class="subtitle">
-      Estaba pensando en ti y se me ocurrió hacerte algo.
-      No es la gran cosa, pero lo hice con cariño. :)
-    </p>
+        <h1>¡Buenos días! ✨</h1>
 
-    <div class="question">
-      Tengo unas cuantas cosas que decirte...
-      <br>
-      ¿Quieres leerlas? 👀
+        <p class="subtitle">
+            Desperté pensando en ti y quise hacerte este pequeño detalle.
+            Espero que tengas un día muy bonito. :)
+        </p>
+
+        <div class="question-box">
+            ¿Te gustaría leer unas cosas que pienso de ti?
+        </div>
+
+        <div class="playground" id="playground">
+
+            <button class="btn-yes" id="btn-yes"
+            onclick="iniciarCumplidos()">
+                ¡Sí, claro! 
+            </button>
+
+            <button class="btn-no" id="btn-no">
+                Noo!
+            </button>
+
+        </div>
+
+        <div class="hint-text" id="hint-text"></div>
+
     </div>
 
-    <div class="playground" id="playground">
-      <button class="btn-yes" id="yes">OBVIO QUE SÍ 💗</button>
-      <button class="btn-no" id="no">Nop 🙄</button>
+    <!-- PANTALLA 2: CUMPLIDOS -->
+
+    <div id="screen-compliments" class="hidden">
+
+        <div class="top-tag">A FEW THINGS ABOUT YOU</div>
+
+        <div class="counter" id="contador">1 / 8</div>
+
+        <div class="photo-container">
+            <img src="nosotros.jpg" alt="Nosotros">
+        </div>
+
+        <h2 class="compliment-title">Lo que me gusta de ti</h2>
+
+        <p class="compliment-subtitle">
+            Unas cuantas cosas que quería decirte...
+        </p>
+
+        <div class="message-box" id="display">
+            Tienes una sonrisa que alegra el día entero.
+        </div>
+
+        <div class="progress">
+            <div class="progress-fill" id="progress"></div>
+        </div>
+
+        <button class="btn-next" id="btn-next"
+        onclick="siguienteCumplido()">
+            Siguiente ❤️
+        </button>
+
+        <div class="footer">
+            made with ♡ for you
+        </div>
+
     </div>
 
-    <div class="hint" id="hint"></div>
-  </section>
-
-  <!-- PANTALLA DE CUMPLIDOS -->
-
-  <section id="compliments" class="hidden">
-
-    <div class="top-tag">✦ COSITAS QUE PIENSO ✦</div>
-
-    <div class="counter" id="counter">01 / 08</div>
-
-    <div class="photo-container">
-      <img src="nosotros.jpg" alt="Una foto especial">
-    </div>
-
-    <h2 class="section-title">Por cierto...</h2>
-
-    <p class="section-subtitle">
-      Hay algunas cosas que quiero que sepas 💌
-    </p>
-
-    <div class="message-box" id="message">
-      Tienes una sonrisa que, no sé cómo explicarlo,
-      siempre consigue sacarme una sonrisa a mí también.
-    </div>
-
-    <div class="progress">
-      <div class="progress-fill" id="progress"></div>
-    </div>
-
-    <button class="btn-next" id="next">
-      Siguiente ✨
-    </button>
-
-    <div class="footer">
-      made with ♡ just for you
-    </div>
-
-  </section>
-
-</main>
+</div>
 
 <script>
-const intro = document.getElementById('intro');
-const compliments = document.getElementById('compliments');
 
-const btnNo = document.getElementById('no');
-const btnYes = document.getElementById('yes');
+/* BOTON QUE ESCAPA */
+
+const btnNo = document.getElementById('btn-no');
+const btnYes = document.getElementById('btn-yes');
 const playground = document.getElementById('playground');
-const hint = document.getElementById('hint');
+const hintText = document.getElementById('hint-text');
 
 const frasesEscape = [
-  "¿Neta? JAJAJA 🤨",
-  "Ese botón no era el indicado...",
-  "Intenta otra vez 😭",
-  "Uy, qué difícil decisión...",
-  "Yo que tú elegiría el otro 👀",
-  "JAJAJA ya dale al rosa 💗"
-];
-
-const cumplidos = [
-  "Tienes una sonrisa que, no sé cómo explicarlo, siempre consigue sacarme una sonrisa a mí también.",
-
-  "Me gusta que contigo puedo hablar de cualquier tontería y aun así pasarla increíble.",
-
-  "Tienes algo que hace que quiera seguir conociéndote, incluso cuando ya creo que sé bastante de ti.",
-
-  "Eres muy bonita, pero creo que todavía no te das cuenta de cuánto.",
-
-  "Me encanta tu personalidad, hasta esas pequeñas cosas random que te hacen ser tú.",
-
-  "Tienes una manera muy tuya de hacer especiales hasta los momentos más sencillos.",
-
-  "Me gusta cómo me siento cuando estoy contigo. No necesito que pase algo extraordinario para disfrutarlo.",
-
-  "Y bueno, creo que ya quedó bastante claro que me gustas. Pero espero que todavía nos queden muchísimas cosas por descubrir juntos. ❤️"
+    "¿Segura? 😱",
+    "¡Intenta otra vez!",
+    "Ese botón no funciona 🙊",
+    "Casi...",
+    "Mejor dale al otro botón 🫰🏻",
+    "¡No te arrepentirás!"
 ];
 
 let escapeCount = 0;
-let index = 0;
+let yesScale = 1;
 
-function moverBoton(e) {
-  if(e) e.preventDefault();
+function moverBotonNo(e) {
 
-  const area = playground.getBoundingClientRect();
-  const btn = btnNo.getBoundingClientRect();
+    if (e) e.preventDefault();
 
-  const maxX = Math.max(0, area.width - btn.width);
-  const maxY = Math.max(0, area.height - btn.height);
+    const area = playground.getBoundingClientRect();
+    const btn = btnNo.getBoundingClientRect();
 
-  btnNo.style.right = 'auto';
-  btnNo.style.left = Math.random() * maxX + 'px';
-  btnNo.style.top = Math.random() * maxY + 'px';
+    const maxX = Math.max(0, area.width - btn.width);
+    const maxY = Math.max(0, area.height - btn.height);
 
-  hint.textContent = frasesEscape[
-    escapeCount % frasesEscape.length
-  ];
+    btnNo.style.right = 'auto';
+    btnNo.style.left = Math.random() * maxX + 'px';
+    btnNo.style.top = Math.random() * maxY + 'px';
 
-  escapeCount++;
+    hintText.innerText =
+        frasesEscape[escapeCount % frasesEscape.length];
 
-  btnYes.style.transform =
-    `scale(${Math.min(1 + escapeCount * .035, 1.3)})`;
+    escapeCount++;
+
+    if (yesScale < 1.4) {
+        yesScale = Math.min(1.4, yesScale + 0.08);
+
+        btnYes.style.transform = `scale(${yesScale})`;
+
+        btnYes.style.boxShadow =
+            `0 8px 25px rgba(244,125,167,0.35)`;
+    }
 }
 
-btnNo.addEventListener('mouseover', moverBoton);
-btnNo.addEventListener('touchstart', moverBoton, {
-  passive: false
+btnNo.addEventListener('mouseover', moverBotonNo);
+
+btnNo.addEventListener('touchstart', moverBotonNo, {
+    passive: false
 });
 
-btnNo.addEventListener('click', moverBoton);
+btnNo.addEventListener('click', moverBotonNo);
 
-btnYes.addEventListener('click', iniciar);
 
-function iniciar() {
-  intro.classList.add('hidden');
-  compliments.classList.remove('hidden');
-  compliments.classList.add('fade');
+/* FRASES ORIGINALES */
 
-  lanzarLluvia(15);
+const cumplidos = [
+
+    "Tienes una sonrisa que alegra el día entero.",
+
+    "Me encanta lo fácil y natural que se siente platicar contigo.",
+
+    "Tienes una forma de ser súper linda, de esas que hacen querer conocerte más.",
+
+    "No sé cómo le haces, pero siempre te ves increíble.",
+
+    "Me gusta mucho tu forma de pensar y la forma en que ves el mundo.",
+
+    "Haces que el tiempo se pase volando cuando estamos juntos.",
+
+    "Me encanta descubrir cada vez más cosas de ti y encontrar nuevos motivos para sonreír cuando estamos juntos.",
+
+    "En resumen: me gustas mucho y espero que este detalle te haya sacado una sonrisa. ¡Que tengas un bonito día! 💗"
+
+];
+
+let indice = 1;
+let cambiando = false;
+
+
+/* CAMBIO DE PANTALLA */
+
+function iniciarCumplidos() {
+
+    const intro = document.getElementById('screen-intro');
+    const comp = document.getElementById('screen-compliments');
+
+    intro.classList.add('hidden');
+
+    comp.classList.remove('hidden');
+    comp.classList.add('fade-in');
+
+    lanzarLluvia(10);
 }
 
-function siguiente() {
-  const message = document.getElementById('message');
-  const counter = document.getElementById('counter');
-  const progress = document.getElementById('progress');
-  const next = document.getElementById('next');
 
-  message.style.opacity = '0';
-  message.style.transform = 'translateY(8px)';
+/* SIGUIENTE CUMPLIDO */
 
-  setTimeout(() => {
-    message.textContent = cumplidos[index];
+function siguienteCumplido() {
 
-    counter.textContent =
-      String(index + 1).padStart(2, '0') + ' / 08';
+    if (cambiando) return;
+    cambiando = true;
 
-    progress.style.width =
-      ((index + 1) / cumplidos.length * 100) + '%';
+    const display = document.getElementById('display');
+    const contador = document.getElementById('contador');
+    const btnNext = document.getElementById('btn-next');
+    const progress = document.getElementById('progress');
 
-    if(index === cumplidos.length - 1) {
-      next.textContent = 'Volver a leer 💗';
-      lanzarLluvia(30);
-    } else {
-      next.textContent = 'Siguiente ✨';
-    }
+    display.style.opacity = 0;
+    display.style.transform = 'translateY(10px)';
 
-    index = (index + 1) % cumplidos.length;
+    setTimeout(() => {
 
-    message.style.opacity = '1';
-    message.style.transform = 'translateY(0)';
-  }, 250);
+        display.innerText = cumplidos[indice];
+
+        contador.innerText =
+            `${indice + 1} / ${cumplidos.length}`;
+
+        progress.style.width =
+            `${((indice + 1) / cumplidos.length) * 100}%`;
+
+        if (indice === cumplidos.length - 1) {
+
+            btnNext.innerText = "Volver a leer ❤️";
+
+            lanzarLluvia(25);
+
+        } else {
+
+            btnNext.innerText = "Siguiente ✨";
+
+        }
+
+        indice = (indice + 1) % cumplidos.length;
+
+        display.style.opacity = 1;
+        display.style.transform = 'translateY(0)';
+
+        cambiando = false;
+
+    }, 300);
 }
 
-document.getElementById('next')
-  .addEventListener('click', siguiente);
+
+/* LLUVIA DE PARTICULAS */
 
 function lanzarLluvia(cantidad) {
-  const simbolos = ['💗','✨','💕','⭐','🦋'];
 
-  for(let i = 0; i < cantidad; i++) {
-    setTimeout(() => {
-      const particle = document.createElement('div');
+    const simbolos = ["✨", "❤️", "🌸", "☀️", "💖"];
 
-      particle.className = 'particle';
-      particle.textContent =
-        simbolos[Math.floor(Math.random() * simbolos.length)];
+    for (let i = 0; i < cantidad; i++) {
 
-      particle.style.left = Math.random() * 100 + 'vw';
-      particle.style.fontSize =
-        (Math.random() * 12 + 17) + 'px';
+        setTimeout(() => {
 
-      particle.style.animationDuration =
-        (Math.random() * 2 + 3) + 's';
+            const p = document.createElement('div');
 
-      document.body.appendChild(particle);
+            p.classList.add('particle');
 
-      setTimeout(() => particle.remove(), 5500);
-    }, i * 120);
-  }
+            p.innerText =
+                simbolos[Math.floor(Math.random() * simbolos.length)];
+
+            p.style.left = Math.random() * 100 + 'vw';
+
+            p.style.animationDuration =
+                (Math.random() * 2 + 3) + 's';
+
+            p.style.fontSize =
+                (Math.random() * 10 + 20) + 'px';
+
+            document.body.appendChild(p);
+
+            setTimeout(() => p.remove(), 5000);
+
+        }, i * 150);
+
+    }
 }
+
 </script>
 
 </body>
